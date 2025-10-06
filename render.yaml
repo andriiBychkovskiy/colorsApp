@@ -3,8 +3,8 @@ services:
     name: kids-colors-app
     env: node
     rootDir: react
-    buildCommand: npm install && npm run build:full
-    startCommand: npm run preview:full
+    buildCommand: cd ./react && npm install && npm run build && cd .. && npm install
+    startCommand: NODE_ENV=production node backend/server.js
     healthCheckPath: /
     routes:
       - type: rewrite
